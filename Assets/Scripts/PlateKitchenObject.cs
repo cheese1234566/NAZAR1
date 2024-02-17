@@ -27,15 +27,18 @@ public class PlateKitchenObject : KitchenObject
         {
             return false;
         }
-        if (kitchenObjectSOList.Contains(kitchenObjectSO))
+
+//Закоментировали, чтобы не втыкал(Некоторые рецепты требуют сразу несколько одниковых объектов, такие, как double cheeseburger)
+        /*if (kitchenObjectSOList.Contains(kitchenObjectSO))
         {
             return false;
-        }
+        }*/
         else
         {
             kitchenObjectSOList.Add(kitchenObjectSO);
-            OnIngredientAdded?.Invoke(this, new OnIngredientAddedEventArgs {
-            kitchenObjectSO = kitchenObjectSO
+            OnIngredientAdded?.Invoke(this, new OnIngredientAddedEventArgs
+            {
+                kitchenObjectSO = kitchenObjectSO
             });
             return true;
         }
