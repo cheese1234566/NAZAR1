@@ -4,15 +4,10 @@ using UnityEngine;
 
 public class ResetStaticDataManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        CuttingCounter.ResetStaticData();
+        BaseCounter.ResetStaticData();
+        TrashCounter.ResetStaticData();
     }
 }
